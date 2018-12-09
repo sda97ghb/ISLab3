@@ -22,6 +22,12 @@ Window {
         anchors.margins: 8
         Label {
             Layout.fillWidth: true
+            text: "Мегашифратор-3000"
+            font.pointSize: 22
+            font.bold: true
+        }
+        Label {
+            Layout.fillWidth: true
             text: "Текст"
         }
         TextField {
