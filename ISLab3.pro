@@ -15,7 +15,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     EncryptorViewModel.cpp \
-    Encryptor.cpp
+    Encryptor.cpp \
+    AdvancedEncryptorViewModel.cpp \
+    KeyManager.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,4 +34,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     EncryptorViewModel.h \
-    Encryptor.h
+    Encryptor.h \
+    AdvancedEncryptorViewModel.h \
+    KeyManager.h
