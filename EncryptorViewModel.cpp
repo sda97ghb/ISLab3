@@ -34,6 +34,11 @@ void EncryptorViewModel::encrypt() {
     }
 }
 
+void EncryptorViewModel::generateKey() {
+    QByteArray key = Encryptor::generateKeyOfLength(QByteArray::fromPercentEncoding(m_text.toUtf8()).length());
+    setKey(key.toPercentEncoding());
+}
+
 void EncryptorViewModel::setText(QString text) {
     if (m_text == text)
         return;

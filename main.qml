@@ -45,12 +45,20 @@ Window {
             Layout.fillWidth: true
             text: "Ключ"
         }
-        TextField {
-            id: keyEdit
+        RowLayout {
             Layout.fillWidth: true
-            placeholderText: "Введите ключ"
-            text: encryptorViewModel.key
-            selectByMouse: true
+            Layout.preferredHeight: keyEdit.height
+            TextField {
+                id: keyEdit
+                Layout.fillWidth: true
+                placeholderText: "Введите ключ"
+                text: encryptorViewModel.key
+                selectByMouse: true
+            }
+            Button {
+                text: "Случайный ключ"
+                onClicked: encryptorViewModel.generateKey()
+            }
         }
 
         Item {
@@ -74,11 +82,27 @@ Window {
             text: "Зашифрованный текст"
         }
         TextField {
+            id: encryptedTextView
             Layout.fillWidth: true
             placeholderText: "Здесь будет зашифрованный текст"
             readOnly: true
             selectByMouse: true
             text: encryptorViewModel.encryptedText
+        }
+        RowLayout {
+            Layout.fillWidth: true
+            Layout.preferredHeight: encryptedToTextButton.height
+            Item{Layout.fillWidth: true}
+            Button {
+                id: encryptedToTextButton
+                text: "Переместить в текст"
+                onClicked: textEdit.text = encryptedTextView.text
+            }
+            Button {
+                text: "Переместить в ключ"
+                onClicked: keyEdit.text = encryptedTextView.text
+            }
+            Item{Layout.fillWidth: true}
         }
         Item {
             Layout.fillWidth: true

@@ -25,6 +25,8 @@ signals:
 public slots:
     void encrypt();
 
+    void generateKey();
+
     void setText(QString text);
     void setKey(QString key);
 
