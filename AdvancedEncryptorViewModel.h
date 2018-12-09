@@ -29,6 +29,8 @@ public slots:
     void generateKeys();
     void encrypt();
 
+    void saveKeysToFile(QString filename);
+
     void setText(QString text);
     void setSelectedKey(QString selectedKey);
 

@@ -63,6 +63,21 @@ void AdvancedEncryptorViewModel::encrypt() {
     }
 }
 
+void AdvancedEncryptorViewModel::saveKeysToFile(QString filename) {
+    filename = QUrl(filename).toLocalFile();
+    QFile file(filename);
+    if (!file.open(QIODevice::WriteOnly)) {
+        qCritical() << "Невозможно записать в файл";
+        return;
+    }
+    QTextStream stream(&file);
+    for (auto key : m_keys)
+        stream << key.toMap().value("key").toString() << "\n";
+    stream.flush();
+    file.flush();
+    file.close();
+}
+
 void AdvancedEncryptorViewModel::setText(QString text) {
     if (m_text == text)
         return;

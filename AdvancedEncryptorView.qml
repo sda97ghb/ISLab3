@@ -2,12 +2,13 @@ import QtQuick 2.11
 import QtQuick.Window 2.11
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
+import QtQuick.Dialogs 1.2
 
 import MyViewModels 1.0
 
 Item {
     implicitWidth: 400
-    implicitHeight: 820
+    implicitHeight: 870
 
     AdvancedEncryptorViewModel {
         id: viewModel
@@ -95,6 +96,23 @@ Item {
                         onClicked: keyEdit.text = modelData.key
                     }
                 }
+            }
+        }
+        Item {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 8
+        }
+
+        Button {
+            text: "Сохранить в файл"
+            Layout.alignment: Qt.AlignHCenter
+            onClicked: saveKeysDialog.open()
+            FileDialog {
+                id: saveKeysDialog
+                title: "Сохранить ключи в файл..."
+                selectMultiple: false
+                selectExisting: false
+                onAccepted: viewModel.saveKeysToFile(fileUrl)
             }
         }
 

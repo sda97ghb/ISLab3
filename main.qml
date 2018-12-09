@@ -7,8 +7,8 @@ ApplicationWindow {
     visible: true
     minimumWidth: 400
     maximumWidth: 400
-    minimumHeight: [470, 860][theSwipeView.currentIndex]
-    maximumHeight: [470, 860][theSwipeView.currentIndex]
+    minimumHeight: [470, 910][theSwipeView.currentIndex]
+    maximumHeight: [470, 910][theSwipeView.currentIndex]
     title: qsTr("Hello World")
 
     header: TabBar {
