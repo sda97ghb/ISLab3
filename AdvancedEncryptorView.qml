@@ -7,8 +7,8 @@ import QtQuick.Dialogs 1.2
 import MyViewModels 1.0
 
 Item {
-    implicitWidth: 400
-    implicitHeight: 870
+    implicitWidth: 360
+    implicitHeight: 900
 
     AdvancedEncryptorViewModel {
         id: viewModel

@@ -6,6 +6,9 @@ import QtQuick.Controls 2.2
 import MyViewModels 1.0
 
 Item {
+    implicitWidth: 100//360
+    implicitHeight: 470
+
     EncryptorViewModel {
         id: encryptorViewModel
         text: textEdit.text
@@ -84,10 +87,10 @@ Item {
             selectByMouse: true
             text: encryptorViewModel.encryptedText
         }
-        RowLayout {
+        ColumnLayout {
             Layout.fillWidth: true
             Layout.preferredHeight: encryptedToTextButton.height
-            Item{Layout.fillWidth: true}
+//            Item{Layout.fillWidth: true}
             Button {
                 id: encryptedToTextButton
                 text: "Переместить в текст"
@@ -97,7 +100,7 @@ Item {
                 text: "Переместить в ключ"
                 onClicked: keyEdit.text = encryptedTextView.text
             }
-            Item{Layout.fillWidth: true}
+//            Item{Layout.fillWidth: true}
         }
         Item {
             Layout.fillWidth: true

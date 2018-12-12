@@ -21,6 +21,10 @@ SOURCES += \
 
 RESOURCES += qml.qrc
 
+android {
+LIBS += -L/home/dmitry/Aux/Android/android-ndk-r18b/platforms/android-23/arch-arm64/usr/lib/
+}
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 

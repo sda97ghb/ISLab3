@@ -5,8 +5,8 @@ import QtQuick.Controls 2.2
 
 ApplicationWindow {
     visible: true
-    minimumWidth: 400
-    maximumWidth: 400
+//    minimumWidth: 400
+//    maximumWidth: 400
     minimumHeight: [470, 910][theSwipeView.currentIndex]
     maximumHeight: [470, 910][theSwipeView.currentIndex]
     title: qsTr("Hello World")
@@ -26,12 +26,19 @@ ApplicationWindow {
         id: theSwipeView
         currentIndex: theTabBar.currentIndex
         anchors.fill: parent
-        EncryptorView {
-        }
-//        ScrollView {
-//            ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-            AdvancedEncryptorView {
+        ScrollView {
+            contentWidth: -1
+            EncryptorView {
+                width: theSwipeView.width
             }
-//        }
+        }
+        ScrollView {
+            contentWidth: -1
+//            ScrollBar.vertical.policy: ScrollBar.AlwaysOn
+
+            AdvancedEncryptorView {
+                width: theSwipeView.width
+            }
+        }
     }
 }
